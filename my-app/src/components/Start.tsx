@@ -23,7 +23,7 @@ const Start: React.FC = () => {
           <To>My Love</To>
         </Front>
         <Back>
-          <p>insert backside</p>
+          <p> letter backside</p>
         </Back>
       </Card>
     </Envelope>
