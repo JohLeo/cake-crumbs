@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Envelope, Card } from './style/start-style';
+import { Envelope, Card, Front, Back, StampImg, To } from './style/start-style';
+import stamp from '../assets/stamp.svg';
 
 const Start: React.FC = () => {
   const [flipped, setFlipped] = useState(false);
@@ -17,12 +18,13 @@ const Start: React.FC = () => {
   return (
     <Envelope>
       <Card className={flipped ? 'flipped' : ''} onClick={handleFlip}>
-        <div className="front">
-          <h1>To: My Love</h1>
-        </div>
-        <div className="back">
+        <Front>
+          <StampImg src={stamp} alt="Stamp" />
+          <To>My Love</To>
+        </Front>
+        <Back>
           <p>insert backside</p>
-        </div>
+        </Back>
       </Card>
     </Envelope>
   );

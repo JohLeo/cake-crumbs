@@ -23,27 +23,51 @@ export const Card = styled.div`
   &.flipped {
     transform: rotateY(180deg);
   }
-
-  .front,
-  .back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #fff;
-    backface-visibility: hidden;
-  }
-
-  .front {
-    background: #fbcad6;
-    transform: rotateY(0deg);
-  }
-
-  .back {
-    background: #fbcad6;
-    transform: rotateY(180deg);
-  }
 `;
+
+export const Front = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #f60606;
+  backface-visibility: hidden;
+  background: #fbcad6;
+  transform: rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+export const Back = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #f60606;
+  backface-visibility: hidden;
+  background: #fbcad6;
+  transform: rotateY(180deg);
+`;
+
+export const StampImg = styled.img`
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  margin: 20px 20px 0 0;
+`;
+
+export const To = styled.h1`
+  margin: 40px 85px 0 0;
+  font-family: Limelight;
+  font-size: 60px;
+`;
+
+
