@@ -34,8 +34,11 @@ const bigHeart = keyframes`
     transform: scale(1);
   }
 `;
+interface HeartProps {
+  pulsate: boolean;
+}
 
-export const Heart = styled.img <{ pulsate: boolean }>`
+export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />) <HeartProps>`
   position: absolute;
   top: 290px;
   margin: 25px;
