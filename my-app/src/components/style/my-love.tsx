@@ -23,17 +23,30 @@ export const BgEnvImg = styled.img`
   margin-top:1px;
 `;
 
-const bigHeart = keyframes`
+const startHeart = keyframes`
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(2);
+    transform: scale(1.3);
   }
   100% {
     transform: scale(1);
   }
 `;
+
+const pulsHeart = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
 interface HeartProps {
   pulsate: boolean;
 }
@@ -42,10 +55,10 @@ export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAt
   position: absolute;
   top: 290px;
   margin: 25px;
-  animation: ${({ pulsate }) => (pulsate ? css`${bigHeart} 1s ease` : 'none')};
+  animation: ${({ pulsate }) => (pulsate ? css`${startHeart} 1s ease` : 'none')};
 
   &:hover {
-    animation: ${bigHeart} 1s ease infinite;
+    animation: ${pulsHeart} 1s ease infinite;
   }
 `;
 
