@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import heart from '../../assets/heart.png';
+import heart from '../../assets/heart.svg';
 
 export const BackEnvelope = styled.div`
   display: flex;
@@ -14,12 +14,13 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fbcad6;
   box-shadow: 0 8px 20px rgba(27, 0, 229, 0.512);
 `;
 
 export const BgEnvImg = styled.img`
   position: absolute;
-  margin-top: 8px;
+  margin-top:1px;
 `;
 
 const bigHeart = keyframes`
@@ -27,7 +28,7 @@ const bigHeart = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(1.3);
+    transform: scale(2);
   }
   100% {
     transform: scale(1);
@@ -52,5 +53,5 @@ export const HeartBeat = () => {
     setPulsate(true);
   }, []);
 
-  return <Heart src={heart} alt="Heart" pulsate={pulsate} />;
+  return <Heart src={heart} alt="The key" pulsate={pulsate} />;
 };

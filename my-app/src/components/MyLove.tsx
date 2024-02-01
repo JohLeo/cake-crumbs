@@ -1,7 +1,6 @@
 import React from 'react';
 // import { useNavigate } from 'react-router-dom';
-import backenvelope from '../assets/bg-envelope.png';
-
+import envelope from '../assets/envelope.png';
 import { BackEnvelope, Card, BgEnvImg, HeartBeat } from './style/my-love';
 
 
@@ -15,7 +14,7 @@ const MyLove: React.FC = () => {
   return (
     <BackEnvelope>
       <Card>
-        <BgEnvImg src={backenvelope} alt="A letter" />
+        <BgEnvImg src={envelope} alt="A letter" />
         <HeartBeat />
       </Card>
     </BackEnvelope>
