@@ -1,5 +1,6 @@
-
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { keyframes, css } from 'styled-components';
+import heart from '../../assets/heart.png';
 
 export const BackEnvelope = styled.div`
   display: flex;
@@ -33,13 +34,23 @@ const bigHeart = keyframes`
   }
 `;
 
-export const Heart = styled.img`
+export const Heart = styled.img <{ pulsate: boolean }>`
   position: absolute;
   top: 290px;
   margin: 25px;
+  animation: ${({ pulsate }) => (pulsate ? css`${bigHeart} 1s ease` : 'none')};
 
   &:hover {
-    animation: ${bigHeart} 1s ease infinite; /* Apply the scale animation */
+    animation: ${bigHeart} 1s ease infinite;
   }
-
 `;
+
+export const HeartBeat = () => {
+  const [pulsate, setPulsate] = useState(true);
+
+  useEffect(() => {
+    setPulsate(true);
+  }, []);
+
+  return <Heart src={heart} alt="Heart" pulsate={pulsate} />;
+};
