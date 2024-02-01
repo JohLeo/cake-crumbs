@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Envelope, Card, Front, Back, StampImg, To } from './style/start-style';
+import { Envelope, Card, Front, Back, StampImg, To, EnvImg } from './style/start-style';
 import stamp from '../assets/stamp.svg';
+import envelope from '../assets/envelope.png';
 
 const Start: React.FC = () => {
   const [flipped, setFlipped] = useState(false);
@@ -12,7 +13,7 @@ const Start: React.FC = () => {
     setFlipped(true);
     setTimeout(() => {
       navigate('/mylove');
-    }, 1000);
+    }, 3000);
   };
 
   return (
@@ -23,7 +24,7 @@ const Start: React.FC = () => {
           <To>My Love</To>
         </Front>
         <Back>
-          <p> letter backside</p>
+          <EnvImg src={envelope} alt="A letter" />
         </Back>
       </Card>
     </Envelope>

@@ -54,6 +54,11 @@ export const Back = styled.div`
   backface-visibility: hidden;
   background: #fbcad6;
   transform: rotateY(180deg);
+  box-shadow: 0 8px 20px rgba(27, 0, 229, 0.512);
+`;
+
+export const EnvImg = styled.img`
+  position: absolute;
 `;
 
 export const StampImg = styled.img`
