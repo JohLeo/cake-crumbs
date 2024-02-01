@@ -23,6 +23,7 @@ const Start: React.FC = () => {
           <StampImg src={stamp} alt="Stamp" />
           <To>My Love</To>
         </Front>
+
         <Back>
           <EnvImg src={envelope} alt="A letter" />
         </Back>
