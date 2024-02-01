@@ -1,5 +1,5 @@
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const BackEnvelope = styled.div`
   display: flex;
@@ -21,39 +21,25 @@ export const BgEnvImg = styled.img`
   margin-top: 8px;
 `;
 
+const bigHeart = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
 
-export const Heart = styled.div`
+export const Heart = styled.img`
   position: absolute;
-  top: 320px;
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  transform: rotate(-45deg);
+  top: 290px;
   margin: 25px;
-  box-shadow: 0 5px 10px rgba(95, 2, 47, 0.512);
-  transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.3) rotate(-45deg);
+    animation: ${bigHeart} 1s ease infinite; /* Apply the scale animation */
   }
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 50%;
-  }
-
-  &::before {
-    top: -30px;
-    left: 0;
-  }
-
-  &::after {
-    top: 0;
-    left: 30px;
-  }
 `;
