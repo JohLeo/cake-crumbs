@@ -1,19 +1,26 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import backenvelope from '../assets/bg-envelope.png';
+import { BackEnvelope, Card, BgEnvImg, Heart } from './style/my-love';
+
 
 const MyLove: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/darling');
-  };
+  // const handleClick = () => {
+  //   navigate('/darling');
+  // };
 
   return (
-    <div>
-      <h1> We at /mylove press to move to /darling </h1>
-      <button onClick={handleClick}> CLICK ME </button>
-    </div>
+    <BackEnvelope>
+      <Card>
+
+        <BgEnvImg src={backenvelope} alt="A letter" />
+        <Heart />
+      </Card>
+    </BackEnvelope>
   )
 }
 
 export default MyLove;
+/* <button onClick={handleClick}> CLICK ME </button> */

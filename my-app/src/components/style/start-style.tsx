@@ -1,4 +1,4 @@
-// style/start-style.ts
+
 import styled from 'styled-components';
 
 export const Envelope = styled.div`
