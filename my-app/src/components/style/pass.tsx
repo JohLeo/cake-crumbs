@@ -10,8 +10,8 @@ export const InputContainer = styled.div`
 `;
 
 export const BgHeart = styled.div`
- width: 200px; 
-  height: 200px; 
+ width: 210px; 
+  height: 210px; 
   background-image: url('${BgHearts}');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -21,9 +21,8 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 300px;
   margin: 0 auto;
-  padding-top: 48px;
+  padding-top: 50px;
 `
 export const Lab = styled.label`
   display: flex;
@@ -62,10 +61,10 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 2px 10px #FF7676;
   margin: 8px;
 
   &:hover {
     color: #FF7676;
+    box-shadow: 4px 4px 10px #44010c82;
   }
 `;

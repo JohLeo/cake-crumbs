@@ -7,7 +7,7 @@ import PasswordInput from '../PassInput';
 export const BackEnvelope = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 17vh;
 `;
 
 export const Card = styled.div`
@@ -53,6 +53,7 @@ interface HeartProps {
   pulsate: boolean;
 }
 
+// eslint-disable-next-line
 export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />) <HeartProps>`
   position: absolute;
   top: 290px;
@@ -67,6 +68,7 @@ export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAt
 export const HeartBeat: React.FC = () => {
   const [pulsate, setPulsate] = useState(true);
   const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const [incorrectAttempts, setIncorrectAttempts] = useState(0);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -77,12 +79,15 @@ export const HeartBeat: React.FC = () => {
     const correctPassword = process.env.REACT_APP_SECRET_PASSWORD;
 
     if (password === correctPassword) {
-      console.log('Password is correct!');
       navigate('/darling');
-
+    } else if (incorrectAttempts + 1 >= 5) {
+      alert('Odd... one would believe mylove should know this password.');
+    } else if (incorrectAttempts + 1 >= 3) {
+      alert('Are you not the one? To whom did I send this?');
+      setIncorrectAttempts((prevAttempts) => prevAttempts + 1);
     } else {
-      console.log('Incorrect password!');
-      // Handle incorrect password logic
+      alert('Oh no, incorrect password. Please try again.');
+      setIncorrectAttempts((prevAttempts) => prevAttempts + 1);
     }
 
     setShowPasswordInput(true);

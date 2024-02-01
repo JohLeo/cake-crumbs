@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Envelope = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 17vh;
 `;
 
 export const Card = styled.div`
@@ -54,7 +54,7 @@ export const Back = styled.div`
   backface-visibility: hidden;
   background: #fbcad6;
   transform: rotateY(180deg);
-  box-shadow: 0 8px 20px rgba(27, 0, 229, 0.512);
+  box-shadow: 0 8px 20px #1b00e582;
 `;
 
 export const EnvImg = styled.img`
