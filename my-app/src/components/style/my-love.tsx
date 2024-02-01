@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import heart from '../../assets/heart.svg';
+import PasswordInput from '../PassInput';
 
 export const BackEnvelope = styled.div`
   display: flex;
@@ -62,12 +64,45 @@ export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAt
   }
 `;
 
-export const HeartBeat = () => {
+export const HeartBeat: React.FC = () => {
   const [pulsate, setPulsate] = useState(true);
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setShowPasswordInput(true);
+  };
+
+  const handlePasswordSubmit = (password: string) => {
+    const correctPassword = process.env.REACT_APP_SECRET_PASSWORD;
+
+    if (password === correctPassword) {
+      console.log('Password is correct!');
+      navigate('/darling');
+
+    } else {
+      console.log('Incorrect password!');
+      // Handle incorrect password logic
+    }
+
+    setShowPasswordInput(true);
+  };
 
   useEffect(() => {
     setPulsate(true);
   }, []);
 
-  return <Heart src={heart} alt="The key" pulsate={pulsate} />;
+  return (
+    <>
+      <Heart
+        src={heart}
+        alt="The key"
+        pulsate={pulsate}
+        onClick={handleClick}
+      />
+      {showPasswordInput && (
+        <PasswordInput onSubmit={handlePasswordSubmit} />
+      )}
+    </>
+  );
 };
