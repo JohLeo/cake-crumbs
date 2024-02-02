@@ -58,7 +58,8 @@ export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAt
   position: absolute;
   top: 290px;
   margin: 25px;
-  animation: ${({ pulsate }) => (pulsate ? css`${startHeart} 1s ease` : 'none')};
+  cursor: pointer;
+  animation: ${({ pulsate }) => (pulsate ? css`${startHeart} 0.8s ease` : 'none')};
 
   &:hover {
     animation: ${pulsHeart} 1s ease infinite;
@@ -81,9 +82,9 @@ export const HeartBeat: React.FC = () => {
     if (password === correctPassword) {
       navigate('/darling');
     } else if (incorrectAttempts + 1 >= 5) {
-      alert('Odd... one would believe mylove should know this password.');
+      alert('Odd... I belive mylove should know this password!');
     } else if (incorrectAttempts + 1 >= 3) {
-      alert('Are you not the one? To whom did I send this?');
+      alert('Are you not the one, to whom did I send this?');
       setIncorrectAttempts((prevAttempts) => prevAttempts + 1);
     } else {
       alert('Oh no, incorrect password. Please try again.');

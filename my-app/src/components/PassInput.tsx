@@ -7,7 +7,7 @@ import {
   Lab,
   Inp,
   Button
-} from './style/pass';
+} from './style/pass-style';
 
 interface PassInputProps {
   onSubmit: (password: string) => void;
