@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LetContainer, Letter, YesButton } from '../components/style/darling-style';
+import { LetContainer, Letter, LetTitle, LetP, Buttons, ButtOne, ButtTwo, YesButton } from '../components/style/darling-style';
 import NoButton from './Button';
 
 const Darling: React.FC = () => {
@@ -14,9 +14,25 @@ const Darling: React.FC = () => {
     <LetContainer>
 
       <Letter>
-        <h1> we at /reply, click to move to reply </h1>
-        <YesButton onClick={handleClick}> CLICK ME </YesButton>
-        <NoButton onClick={handleClick}> NO </NoButton>
+        <LetTitle> Darling! </LetTitle>
+        <LetP>
+          Your smile is like the sun to me my dear.
+          <br />
+          <br />
+          Would you like to go on a date with me on the 14th of February?
+
+        </LetP>
+        <Buttons>
+          <ButtOne>
+            <YesButton onClick={handleClick}> YES </YesButton>
+          </ButtOne>
+
+          <ButtTwo>
+            <NoButton onClick={handleClick}> NO </NoButton>
+
+          </ButtTwo>
+        </Buttons>
+
       </Letter>
 
     </LetContainer>

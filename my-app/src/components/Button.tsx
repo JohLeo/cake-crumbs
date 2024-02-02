@@ -10,7 +10,7 @@ interface NoButtonProps {
 
 const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
   useEffect(() => {
-    const OFFSET = 100;
+    const OFFSET = 20;
     const noButton = document.getElementById('no-button') as HTMLButtonElement | null;
 
     const setButtonPosition = (left: number, top: number) => {
@@ -51,12 +51,12 @@ const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
         const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width);
         const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height);
 
-        const horizontalOffset = buttonBox.width / 2 + OFFSET;
-        const verticalOffset = buttonBox.height / 2 + OFFSET;
+        const horizontalOffset = buttonBox.width / 1 + OFFSET;
+        const verticalOffset = buttonBox.height / 1 + OFFSET;
         if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
           setButtonPosition(
-            buttonBox.x + (horizontalOffset / horizontalDistanceFrom) * 10,
-            buttonBox.y + (verticalOffset / verticalDistanceFrom) * 10
+            buttonBox.x + (horizontalOffset / horizontalDistanceFrom) * 5,
+            buttonBox.y + (verticalOffset / verticalDistanceFrom) * 5
           );
         }
       }
