@@ -1,4 +1,4 @@
-// NoButton.tsx
+
 import React, { useEffect } from 'react';
 import { NopeButton } from './style/darling-style';
 
@@ -63,7 +63,7 @@ const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
     };
 
     const handleClick = () => {
-      alert('Nehepp');
+      alert('Well done, have a nice day then!');
       window.close();
     };
 

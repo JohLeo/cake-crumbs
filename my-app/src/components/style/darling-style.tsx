@@ -18,23 +18,25 @@ export const Letter = styled.div`
 `;
 
 export const LetTitle = styled.h1`
-  font-family: Limelight;
+font-family: Limelight;
   font-size: 55px;
   font-weight: 300;
   margin: 80px 0 0 40px;
+  color: #FF7676;
 `
 
 export const LetP = styled.p`
   font-size: 30px;
   font-weight: 300;
   margin: 40px 40px;
+  color: #353334;
 `
 
 export const Buttons = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left: -14%;
+  margin-left: -19%;
   margin-top: 30px;
 `;
 
@@ -49,7 +51,8 @@ export const ButtTwo = styled.div`
 export const YesButton = styled.button`
   background-color: #FBCAD6;
   color: #fff;
-  padding: 8px 12px;
+  width: 100px;
+  padding: 6px;
   font-size: 22px;
   font-family: Limelight;
   font-weight: 700;
@@ -61,7 +64,7 @@ export const YesButton = styled.button`
 
   &:hover {
     color: #FF7676;
-    box-shadow: 4px 4px 10px #44010c82;
+    box-shadow: 4px 4px 10px #fa8c8c;
   }
 `;
 
@@ -69,7 +72,8 @@ export const NopeButton = styled.button`
 position: absolute;
   background-color: #FBCAD6;
   color: #fff;
-  padding: 8px 12px;
+  width: 100px;
+  padding: 6px;
   font-size: 22px;
   font-family: Limelight;
   font-weight: 700;

@@ -14,9 +14,9 @@ const Darling: React.FC = () => {
     <LetContainer>
 
       <Letter>
-        <LetTitle> Darling! </LetTitle>
+        <LetTitle> My love,</LetTitle>
         <LetP>
-          Your smile is like the sun to me!
+          You are all the good things!
           <br />
           <br />
           Would you like to go on a date with me on the 14th of February?
