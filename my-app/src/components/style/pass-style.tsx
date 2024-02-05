@@ -4,9 +4,7 @@ import BgHearts from '../../assets/bg-heart.svg';
 
 export const InputContainer = styled.div`
   position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding-top: 48px;
 `;
 
 export const BgHeart = styled.div`

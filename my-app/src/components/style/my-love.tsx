@@ -29,8 +29,14 @@ const startHeart = keyframes`
   0% {
     transform: scale(1);
   }
+  25% {
+    transform: scale(1.1);
+  }
   50% {
-    transform: scale(1.3);
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -42,7 +48,7 @@ const pulsHeart = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(1.6);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -56,8 +62,8 @@ interface HeartProps {
 // eslint-disable-next-line
 export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />) <HeartProps>`
   position: absolute;
-  top: 290px;
   margin: 25px;
+ padding-top: 70px;
   cursor: pointer;
   animation: ${({ pulsate }) => (pulsate ? css`${startHeart} 0.8s ease` : 'none')};
 
