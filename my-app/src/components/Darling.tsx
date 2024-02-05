@@ -14,12 +14,14 @@ const Darling: React.FC = () => {
     <LetContainer>
 
       <Letter>
-        <LetTitle> My love,</LetTitle>
+        <LetTitle> My dear,</LetTitle>
         <LetP>
           You are all the good things!
           <br />
           <br />
-          Would you like to go on a date with me on the 14th of February?
+          Would you like to go on a  <br />
+          date with me on the 14th  <br />
+          of February?
 
         </LetP>
         <Buttons>
