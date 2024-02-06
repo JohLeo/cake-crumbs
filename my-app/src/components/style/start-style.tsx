@@ -19,7 +19,7 @@ export const Card = styled.div`
   box-shadow: 0 8px 20px rgba(27, 0, 229, 0.512);
   transition: transform 1.5s;
   background: #fbcad6;
-
+ 
   &.flipped {
     transform: rotateY(180deg);
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import FormToLove from './Form';
+import { FormContainer, FormLetter } from './style/reply-style';
 
 const Reply: React.FC = () => {
   const navigate = useNavigate();
@@ -9,10 +11,12 @@ const Reply: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1> We at /reply it's final but we click anyway, would be best to click it and send something </h1>
-      <button onClick={handleClick}> CLICK ME </button>
-    </div>
+    <FormContainer>
+      <FormLetter>
+        <FormToLove />
+        <button onClick={handleClick}> CLICK ME </button>
+      </FormLetter>
+    </FormContainer>
   )
 }
 
