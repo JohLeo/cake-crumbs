@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormTitle, FormTo, LabTo, InpTo } from './style/reply-style';
 
 interface FormData {
   myName: string;
@@ -62,43 +63,12 @@ const FormToLove: React.FC = () => {
 
   return (
     <div>
-      <h1>Fill this in</h1>
+      <FormTitle>Fill this in</FormTitle>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="myName">Your name:</label>
-          <input
-            type="text"
-            id="Name"
-            name="Name"
-            value={formData.myName}
-            onChange={handleInputChange}
-          />
-        </div>
+      <FormTo onSubmit={handleSubmit}>
 
         <div>
-          <label htmlFor="toName">To Name:</label>
-          <input
-            type="text"
-            id="toName"
-            name="toName"
-            value={formData.toName}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="message">Decribe it:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <label>Where:</label>
+          <LabTo>Where:</LabTo>
           <label>
             <input
               type="radio"
@@ -168,7 +138,7 @@ const FormToLove: React.FC = () => {
 
 
         <div>
-          <label htmlFor="dropdown">Select an option:</label>
+          <LabTo htmlFor="dropdown">Select an option:</LabTo>
           <select
             id="dropdown"
             name="selectedOption"
@@ -183,18 +153,54 @@ const FormToLove: React.FC = () => {
         </div>
 
         <div>
-          <label htmlFor="email">Email:</label>
-          <input
+          <LabTo htmlFor="message">Decribe it:</LabTo>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div>
+          <LabTo htmlFor="myName">Your name:</LabTo>
+          <InpTo
+            type="text"
+            id="Name"
+            name="Name"
+            placeholder='Your name'
+            value={formData.myName}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div>
+          <LabTo htmlFor="toName">To Name:</LabTo>
+          <InpTo
+            type="text"
+            id="toName"
+            name="toName"
+            placeholder='Name'
+            value={formData.toName}
+            onChange={handleInputChange}
+          />
+        </div>
+
+
+        <div>
+          <LabTo htmlFor="email">Email:</LabTo>
+          <InpTo
             type="email"
             id="email"
             name="email"
+            placeholder='E-mail'
             value={formData.email}
             onChange={handleInputChange}
           />
         </div>
 
         <button type="submit">Submit</button>
-      </form>
+      </FormTo>
     </div>
   );
 };
