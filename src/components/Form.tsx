@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { FormTitle, FormTo, FormP, LabTo, InpTo, TextCont, TextForm, CharSpan } from './style/reply-style';
 
 interface FormData {
@@ -19,6 +20,8 @@ const FormToLove: React.FC = () => {
     selectedOption: '',
     email: '',
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -45,11 +48,13 @@ const FormToLove: React.FC = () => {
         <select
           id="dropdown"
           name="selectedOption"
-          value="{formData.selectedOption"
+          value={formData.selectedOption}
           onChange={handleInputChange}
+          required
         >
           <option value="">Select</option>
-          <option value="dinner">Dinner</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Iceskating">Ice skating</option>
         </select>
       );
     } else if (formData.where === 'away') {
@@ -59,6 +64,7 @@ const FormToLove: React.FC = () => {
           name="selectedOption"
           value={formData.selectedOption}
           onChange={handleInputChange}
+          required
         >
           <option value="">Select</option>
           <option value="Säffle">Säffle</option>
@@ -71,6 +77,7 @@ const FormToLove: React.FC = () => {
           name="selectedOption"
           value={formData.selectedOption}
           onChange={handleInputChange}
+          required
         >
           <option value="">Select</option>
           <option value="Playstation">Playstation</option>
@@ -85,8 +92,13 @@ const FormToLove: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Logic needed to handle form submission
-  };
+
+    if (formData.myName && formData.toName && formData.message && formData.where && formData.selectedOption && formData.email) {
+      navigate('/send', { state: { formData } });
+    } else {
+      alert('Please fill in all fields');
+    }
+  }
 
 
   return (
@@ -106,6 +118,7 @@ const FormToLove: React.FC = () => {
               value="out"
               checked={formData.where === 'out'}
               onChange={handleInputChange}
+              required
             />
             Out
           </label>
@@ -118,6 +131,7 @@ const FormToLove: React.FC = () => {
               value="away"
               checked={formData.where === 'away'}
               onChange={handleInputChange}
+              required
             />
             Away
           </label>
@@ -130,6 +144,7 @@ const FormToLove: React.FC = () => {
               value="home"
               checked={formData.where === 'home'}
               onChange={handleInputChange}
+              required
             />
             Home
           </label>
@@ -144,6 +159,7 @@ const FormToLove: React.FC = () => {
             name="message"
             value={formData.message}
             onChange={handleTextChange}
+            required
           />
           <CharSpan>{remainingCharacters}</CharSpan>
         </TextCont>

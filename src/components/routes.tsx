@@ -4,6 +4,7 @@ import Start from './Start';
 import MyLove from './MyLove';
 import Darling from './Darling';
 import Reply from './Reply';
+import Send from './Send';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/mylove" element={<MyLove />} />
         <Route path="/darling" element={<Darling />} />
         <Route path="/reply" element={<Reply />} />
-
+        <Route path="/send" element={<Send />} />
       </Routes>
     </BrowserRouter>
   )
