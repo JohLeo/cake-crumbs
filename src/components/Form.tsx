@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { FormTitle, FormTo, FormP, LabTo, InpTo, TextCont, TextForm, CharSpan } from './style/reply-style';
+import {
+  FormTitle,
+  FormTo,
+  FormP,
+  FormInfo,
+  FormLabel,
+  NameInput,
+  RadioButton,
+  RadioLabel,
+  ColContainer,
+  TextForm,
+  CharSpan,
+  RowContainer,
+  FormButton
+} from './style/reply-style';
 
 interface FormData {
   myName: string;
@@ -107,66 +121,76 @@ const FormToLove: React.FC = () => {
       <FormP>Would you want to do this or that</FormP>
       <FormTo onSubmit={handleSubmit}>
 
-        <TextCont>
-          Where:
-          <label htmlFor="whereOut">
+        <ColContainer>
+          <FormInfo>
+            Where:
+          </FormInfo>
+          <RowContainer>
+            <RadioLabel htmlFor="whereOut">
 
-            <input
-              type="radio"
-              id="whereOut"
-              name="where"
-              value="out"
-              checked={formData.where === 'out'}
-              onChange={handleInputChange}
-              required
-            />
-            Out
-          </label>
+              <RadioButton
+                type="radio"
+                id="whereOut"
+                name="where"
+                value="out"
+                checked={formData.where === 'out'}
+                onChange={handleInputChange}
+                required
+              />
+              <FormInfo>
+                Out
+              </FormInfo>
+            </RadioLabel>
 
-          <label htmlFor="whereAway">
-            <input
-              type="radio"
-              id="whereAway"
-              name="where"
-              value="away"
-              checked={formData.where === 'away'}
-              onChange={handleInputChange}
-              required
-            />
-            Away
-          </label>
+            <RadioLabel htmlFor="whereAway">
+              <RadioButton
+                type="radio"
+                id="whereAway"
+                name="where"
+                value="away"
+                checked={formData.where === 'away'}
+                onChange={handleInputChange}
+                required
+              />
+              <FormInfo>
+                Away
+              </FormInfo>
+            </RadioLabel>
 
-          <label htmlFor="whereHome">
-            <input
-              type="radio"
-              id="whereHome"
-              name="where"
-              value="home"
-              checked={formData.where === 'home'}
-              onChange={handleInputChange}
-              required
-            />
-            Home
-          </label>
-        </TextCont>
+            <RadioLabel htmlFor="whereHome">
+              <RadioButton
+                type="radio"
+                id="whereHome"
+                name="where"
+                value="home"
+                checked={formData.where === 'home'}
+                onChange={handleInputChange}
+                required
+              />
+              <FormInfo>
+                Home
+              </FormInfo>
+            </RadioLabel>
+          </RowContainer>
+        </ColContainer>
 
         {renderDropdown()}
 
-        <TextCont>
-          <LabTo htmlFor="message">Decribe your wishes</LabTo>
-          <TextForm
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleTextChange}
-            required
-          />
-          <CharSpan>{remainingCharacters}</CharSpan>
-        </TextCont>
+
+        <FormLabel htmlFor="message">Decribe your wishes</FormLabel>
+        <TextForm
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleTextChange}
+          required
+        />
+        <CharSpan>{remainingCharacters}</CharSpan>
+
 
         <div>
-          <LabTo htmlFor="myName">Your name:</LabTo>
-          <InpTo
+          <FormLabel htmlFor="myName">Your name:</FormLabel>
+          <NameInput
             type="text"
             id="myName"
             name="myName"
@@ -178,8 +202,8 @@ const FormToLove: React.FC = () => {
         </div>
 
         <div>
-          <LabTo htmlFor="toName">To Name:</LabTo>
-          <InpTo
+          <FormLabel htmlFor="toName">To Name:</FormLabel>
+          <NameInput
             type="text"
             id="toName"
             name="toName"
@@ -192,8 +216,8 @@ const FormToLove: React.FC = () => {
 
 
         <div>
-          <LabTo htmlFor="email">Email:</LabTo>
-          <InpTo
+          <FormLabel htmlFor="email">Email:</FormLabel>
+          <NameInput
             type="email"
             id="email"
             name="email"
@@ -204,7 +228,8 @@ const FormToLove: React.FC = () => {
           />
         </div>
 
-        <button type="submit">Submit</button>
+
+        <FormButton type="submit">Submit</FormButton>
       </FormTo>
     </div>
   );
