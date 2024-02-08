@@ -6,7 +6,6 @@ interface FormData {
   toName: string;
   message: string;
   where: string;
-  options: string[];
   selectedOption: string;
   email: string;
 }
@@ -17,37 +16,11 @@ const FormToLove: React.FC = () => {
     toName: '',
     message: '',
     where: '',
-    options: [],
     selectedOption: '',
     email: '',
   });
 
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleCheckboxChange = (option: string) => {
-    const updatedOptions = [...formData.options];
-    const index = updatedOptions.indexOf(option);
-    if (index === -1) {
-      updatedOptions.push(option);
-    } else {
-      updatedOptions.splice(index, 1);
-    }
-    setFormData({
-      ...formData,
-      options: updatedOptions,
-    });
-  };
-
-
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -69,7 +42,6 @@ const FormToLove: React.FC = () => {
     event.preventDefault();
     // Logic needed to handle form submission
   };
-
 
 
   return (
@@ -115,46 +87,12 @@ const FormToLove: React.FC = () => {
         </div>
 
         <div>
-          <p>Options:</p>
-          <label>
-            <input
-              type="checkbox"
-              name="option1"
-              checked={formData.options.includes('option1')}
-              onChange={() => handleCheckboxChange('option1')}
-            />{' '}
-            Option 1
-          </label>
-
-          <label>
-            <input
-              type="checkbox"
-              name="option2"
-              checked={formData.options.includes('option2')}
-              onChange={() => handleCheckboxChange('option2')}
-            />{' '}
-            Option 2
-          </label>
-
-          <label>
-            <input
-              type="checkbox"
-              name="option3"
-              checked={formData.options.includes('option3')}
-              onChange={() => handleCheckboxChange('option3')}
-            />{' '}
-            Option 3
-          </label>
-        </div>
-
-
-        <div>
           <LabTo htmlFor="dropdown">Select an option:</LabTo>
           <select
             id="dropdown"
             name="selectedOption"
             value={formData.selectedOption}
-            onChange={handleSelectChange}
+            onChange={handleInputChange}
           >
             <option value="">Select...</option>
             <option value="option1">Option 1</option>
