@@ -50,41 +50,45 @@ const FormToLove: React.FC = () => {
       <FormP>Would you want to do this or that</FormP>
       <FormTo onSubmit={handleSubmit}>
 
-        <div>
-          <LabTo>Where:</LabTo>
-          <label>
+        <TextCont>
+          Where:
+          <label htmlFor="whereOut">
+
             <input
               type="radio"
+              id="whereOut"
               name="where"
               value="out"
               checked={formData.where === 'out'}
               onChange={handleInputChange}
-            />{' '}
+            />
             Out
           </label>
 
-          <label>
+          <label htmlFor="whereAway">
             <input
               type="radio"
+              id="whereAway"
               name="where"
               value="away"
               checked={formData.where === 'away'}
               onChange={handleInputChange}
-            />{' '}
+            />
             Away
           </label>
 
-          <label>
+          <label htmlFor="whereHome">
             <input
               type="radio"
+              id="whereHome"
               name="where"
               value="home"
               checked={formData.where === 'home'}
               onChange={handleInputChange}
-            />{' '}
+            />
             Home
           </label>
-        </div>
+        </TextCont>
 
         <div>
           <LabTo htmlFor="dropdown">Select an option:</LabTo>
@@ -116,11 +120,12 @@ const FormToLove: React.FC = () => {
           <LabTo htmlFor="myName">Your name:</LabTo>
           <InpTo
             type="text"
-            id="Name"
-            name="Name"
+            id="myName"
+            name="myName"
             placeholder='Name'
             value={formData.myName}
             onChange={handleInputChange}
+            autoComplete='name'
           />
         </div>
 
@@ -133,6 +138,7 @@ const FormToLove: React.FC = () => {
             placeholder='Name'
             value={formData.toName}
             onChange={handleInputChange}
+            autoComplete='name'
           />
         </div>
 
@@ -146,6 +152,7 @@ const FormToLove: React.FC = () => {
             placeholder='E-mail'
             value={formData.email}
             onChange={handleInputChange}
+            autoComplete='email'
           />
         </div>
 
