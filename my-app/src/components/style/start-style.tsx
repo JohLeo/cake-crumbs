@@ -73,6 +73,7 @@ export const To = styled.h1`
   margin: 40px 85px 0 0;
   font-family: Limelight;
   font-size: 60px;
+  text-decoration: underline dotted pink 4px;
 `;
 
 

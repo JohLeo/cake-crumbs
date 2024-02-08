@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormTitle, FormTo, LabTo, InpTo } from './style/reply-style';
+import { FormTitle, FormTo, FormP, LabTo, InpTo, TextCont, TextForm, CharSpan } from './style/reply-style';
 
 interface FormData {
   myName: string;
@@ -55,16 +55,27 @@ const FormToLove: React.FC = () => {
     });
   };
 
+  const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue = event.target.value;
+    setFormData({
+      ...formData,
+      message: inputValue.slice(0, 500)
+    });
+  };
+
+  const remainingCharacters = 500 - formData.message.length;
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     // Logic needed to handle form submission
   };
 
+
+
   return (
     <div>
-      <FormTitle>Fill this in</FormTitle>
-
+      <FormTitle>Would you like</FormTitle>
+      <FormP>Would you want to do this or that</FormP>
       <FormTo onSubmit={handleSubmit}>
 
         <div>
@@ -152,15 +163,16 @@ const FormToLove: React.FC = () => {
           </select>
         </div>
 
-        <div>
-          <LabTo htmlFor="message">Decribe it:</LabTo>
-          <textarea
+        <TextCont>
+          <LabTo htmlFor="message">Decribe your wishes</LabTo>
+          <TextForm
             id="message"
             name="message"
             value={formData.message}
-            onChange={handleInputChange}
+            onChange={handleTextChange}
           />
-        </div>
+          <CharSpan>{remainingCharacters}</CharSpan>
+        </TextCont>
 
         <div>
           <LabTo htmlFor="myName">Your name:</LabTo>
@@ -168,7 +180,7 @@ const FormToLove: React.FC = () => {
             type="text"
             id="Name"
             name="Name"
-            placeholder='Your name'
+            placeholder='Name'
             value={formData.myName}
             onChange={handleInputChange}
           />

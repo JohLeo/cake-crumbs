@@ -26,7 +26,6 @@ font-family: Limelight;
 `
 
 export const LetP = styled.p`
-
   font-size: 30px;
   font-weight: 300;
   margin: 40px 50px;
