@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+// generall containers
 export const FormContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -17,6 +19,7 @@ export const RowContainer = styled.div`
   margin: 10px 0px;
 `;
 
+// basic styling for the letter
 export const FormLetter = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,6 +37,8 @@ export const FormTitle = styled.h4`
   margin: 44px 0 0 50px;
   color: #FF7676;
 `
+
+// styled paragraphs
 export const FormP = styled.p`
   font-size: 20px;
   font-weight: 300;
@@ -48,6 +53,7 @@ export const FormInfo = styled.p`
   margin: 5px 10px 0 0;
 `
 
+// form styling
 export const FormTo = styled.form`
   display: flex;
   flex-direction: column;
@@ -79,6 +85,7 @@ export const NameInput = styled.input`
 }
 `
 
+// radio buttons
 export const RadioButton = styled.input.attrs({ type: 'radio' })`
   appearance: none;
   -webkit-appearance: none;
@@ -101,9 +108,18 @@ export const RadioLabel = styled.label`
   margin-right: 10px;
 `;
 
+// select styling
+export const StyledSelect = styled.select`
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #FBCAD6;
+  letter-spacing: 2px;
+`;
 
-
-
+// textarea span and button below
 export const TextForm = styled.textarea`
  height: 10vh;
  padding: 8px;

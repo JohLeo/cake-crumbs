@@ -9,6 +9,7 @@ import {
   NameInput,
   RadioButton,
   RadioLabel,
+  StyledSelect,
   ColContainer,
   TextForm,
   CharSpan,
@@ -45,21 +46,11 @@ const FormToLove: React.FC = () => {
     });
   };
 
-  const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const inputValue = event.target.value;
-    setFormData({
-      ...formData,
-      message: inputValue.slice(0, 500)
-    });
-  };
-
-  const remainingCharacters = 500 - formData.message.length;
-
 
   const renderDropdown = () => {
     if (formData.where === 'out') {
       return (
-        <select
+        <StyledSelect
           id="dropdown"
           name="selectedOption"
           value={formData.selectedOption}
@@ -69,11 +60,11 @@ const FormToLove: React.FC = () => {
           <option value="">Select</option>
           <option value="Dinner">Dinner</option>
           <option value="Iceskating">Ice skating</option>
-        </select>
+        </StyledSelect>
       );
     } else if (formData.where === 'away') {
       return (
-        <select
+        <StyledSelect
           id="dropdown"
           name="selectedOption"
           value={formData.selectedOption}
@@ -82,11 +73,11 @@ const FormToLove: React.FC = () => {
         >
           <option value="">Select</option>
           <option value="Säffle">Säffle</option>
-        </select>
+        </StyledSelect>
       );
     } else if (formData.where === 'home') {
       return (
-        <select
+        <StyledSelect
           id="dropdown"
           name="selectedOption"
           value={formData.selectedOption}
@@ -96,12 +87,23 @@ const FormToLove: React.FC = () => {
           <option value="">Select</option>
           <option value="Playstation">Playstation</option>
           <option value="Netflix and chill">Netflix and chill</option>
-        </select>
+        </StyledSelect>
       );
     } else {
       return null;
     }
   };
+
+
+  const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue = event.target.value;
+    setFormData({
+      ...formData,
+      message: inputValue.slice(0, 500)
+    });
+  };
+
+  const remainingCharacters = 500 - formData.message.length;
 
 
   const handleSubmit = (event: React.FormEvent) => {
