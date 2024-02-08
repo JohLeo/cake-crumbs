@@ -94,7 +94,7 @@ const FormToLove: React.FC = () => {
     event.preventDefault();
 
     if (formData.myName && formData.toName && formData.message && formData.where && formData.selectedOption && formData.email) {
-      navigate('/send', { state: { formData } });
+      navigate('/date', { state: { formData } });
     } else {
       alert('Please fill in all fields');
     }
