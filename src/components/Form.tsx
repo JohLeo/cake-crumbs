@@ -38,6 +38,51 @@ const FormToLove: React.FC = () => {
 
   const remainingCharacters = 500 - formData.message.length;
 
+
+  const renderDropdown = () => {
+    if (formData.where === 'out') {
+      return (
+        <select
+          id="dropdown"
+          name="selectedOption"
+          value="{formData.selectedOption"
+          onChange={handleInputChange}
+        >
+          <option value="">Select</option>
+          <option value="dinner">Dinner</option>
+        </select>
+      );
+    } else if (formData.where === 'away') {
+      return (
+        <select
+          id="dropdown"
+          name="selectedOption"
+          value={formData.selectedOption}
+          onChange={handleInputChange}
+        >
+          <option value="">Select</option>
+          <option value="Säffle">Säffle</option>
+        </select>
+      );
+    } else if (formData.where === 'home') {
+      return (
+        <select
+          id="dropdown"
+          name="selectedOption"
+          value={formData.selectedOption}
+          onChange={handleInputChange}
+        >
+          <option value="">Select</option>
+          <option value="Playstation">Playstation</option>
+          <option value="Netflix and chill">Netflix and chill</option>
+        </select>
+      );
+    } else {
+      return null;
+    }
+  };
+
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     // Logic needed to handle form submission
@@ -90,20 +135,7 @@ const FormToLove: React.FC = () => {
           </label>
         </TextCont>
 
-        <div>
-          <LabTo htmlFor="dropdown">Select an option:</LabTo>
-          <select
-            id="dropdown"
-            name="selectedOption"
-            value={formData.selectedOption}
-            onChange={handleInputChange}
-          >
-            <option value="">Select...</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </div>
+        {renderDropdown()}
 
         <TextCont>
           <LabTo htmlFor="message">Decribe your wishes</LabTo>
