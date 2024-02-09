@@ -39,13 +39,15 @@ const ItsADate: React.FC = () => {
         </DateBigP>
 
         <DateP>
-          Im thinking a great date would be: <br />
-          {formData.message}
+          I would prefer being {formData.where} for this date and {formData.selectedOption} would be so much fun!
         </DateP>
 
         <DateP>
-          I would prefer being {formData.where} for this date and {formData.selectedOption}.
+          Im also thinking a great date would be: <br />
+          {formData.message}
         </DateP>
+
+
         <DateP>
           Pick me up on the 14th of February at {formData.selectedTime}
         </DateP>

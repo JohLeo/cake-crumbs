@@ -67,7 +67,7 @@ const FormToLove: React.FC = () => {
           <option value="picnic & ice skating">Picnic & ice skating</option>
         </StyledSelect>
       );
-    } else if (formData.where === 'away') {
+    } else if (formData.where === 'surprised') {
       return (
         <StyledSelect
           id="dropdown"
@@ -78,9 +78,9 @@ const FormToLove: React.FC = () => {
         >
           <option value="">Select</option>
           <option value="the outdoors">But let it include the outdoors</option>
-          <option value="tasty food">As long as the food is tasty</option>
+          <option value="but tasty food">As long as the food is tasty</option>
           <option value="dresscode">Just let me know what to wear</option>
-          <option value="surprise me">Totally up to you!</option>
+          <option value="a total surprise">Totally up to you!</option>
         </StyledSelect>
       );
     } else if (formData.where === 'home') {
@@ -115,11 +115,14 @@ const FormToLove: React.FC = () => {
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
+
     setFormData(prevFormData => ({
       ...prevFormData,
       selectedTime: value
     }));
   };
+
+
 
   const formatPhoneNumber = (phoneNumber: string) => {
     const digitsOnly = phoneNumber.replace(/\D/g, '');
@@ -135,7 +138,7 @@ const FormToLove: React.FC = () => {
     if (formData.myName && formData.toName && formData.message && formData.where && formData.selectedOption && formData.tel) {
       navigate('/date', { state: { formData } });
     } else {
-      alert('Please fill in all fields');
+      alert('Make sure you filled it all in, thank you!');
     }
   }
 
@@ -167,13 +170,13 @@ const FormToLove: React.FC = () => {
               </FormInfo>
             </RadioLabel>
 
-            <RadioLabel htmlFor="whereAway">
+            <RadioLabel htmlFor="whereSurprised">
               <RadioButton
                 type="radio"
-                id="whereAway"
+                id="whereSurprised"
                 name="where"
-                value="away"
-                checked={formData.where === 'away'}
+                value="surprised"
+                checked={formData.where === 'surprised'}
                 onChange={handleInputChange}
                 required
               />
