@@ -24,7 +24,7 @@ interface FormData {
   message: string;
   where: string;
   selectedOption: string;
-  tel: number;
+  tel: string;
   selectedTime: string;
 }
 
@@ -35,7 +35,7 @@ const FormToLove: React.FC = () => {
     message: '',
     where: '',
     selectedOption: '',
-    tel: 0,
+    tel: '',
     selectedTime: ''
   });
 
@@ -45,9 +45,19 @@ const FormToLove: React.FC = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: name === 'phone' ? parseInt(value, 10) : value
+      [name]: name === 'tel' ? formatPhoneNumber(value) : value
     });
   };
+
+  const formatPhoneNumber = (phoneNumber: string) => {
+    const digitsOnly = phoneNumber.replace(/\D/g, '');
+
+    const formattedPhoneNumber = digitsOnly.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+
+    return formattedPhoneNumber;
+  };
+
+
 
 
   const renderDropdown = () => {
