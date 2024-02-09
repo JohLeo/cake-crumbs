@@ -172,4 +172,3 @@ export const FormButton = styled.button`
     box-shadow: 4px 4px 10px #fa8c8c;
   }
 `;
-

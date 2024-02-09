@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import heart from '../../assets/heart.svg';
+import heart from '../../assets/heart.png';
 import PasswordInput from '../PassInput';
 
 export const BackEnvelope = styled.div`

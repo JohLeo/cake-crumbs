@@ -10,7 +10,7 @@ interface NoButtonProps {
 
 const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
   useEffect(() => {
-    const OFFSET = 20;
+    const OFFSET = 40;
     const noButton = document.getElementById('no-button') as HTMLButtonElement | null;
 
     const setButtonPosition = (left: number, top: number) => {

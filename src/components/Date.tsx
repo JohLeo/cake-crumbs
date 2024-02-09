@@ -1,7 +1,14 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import CaptureIt from './Capture';
-import { SumContainer, SumLetter, DateHead, DateBigP, DateP } from './style/date-style';
+import {
+  SumContainer,
+  SumLetter,
+  DateHead,
+  DateBigP,
+  DateP,
+  DateTinyP
+} from './style/date-style';
 
 interface FormData {
   myName: string;
@@ -28,22 +35,28 @@ const ItsADate: React.FC = () => {
         <DateHead>It's a YES!</DateHead>
 
         <DateBigP>
-          My dear {formData.toName}, I would love to go on a date with you!
+          {formData.toName}, I would love to go on a date with you!
         </DateBigP>
 
         <DateP>
-          I would prefer being {formData.where} for this date. <br />
-          Im thinking a great date would be:
+          Im thinking a great date would be: <br />
           {formData.message}
         </DateP>
 
         <DateP>
-          Where: {formData.selectedOption} <br />
-          Pick me up on the 14th of February at {formData.selectedTime} <br /><br />
-          If anything changes, contact me, {formData.tel}
+          I would prefer being {formData.where} for this date and {formData.selectedOption}.
+        </DateP>
+        <DateP>
+          Pick me up on the 14th of February at {formData.selectedTime}
         </DateP>
 
-        <DateBigP>Yours sincerely, {formData.myName}.</DateBigP>
+        <DateTinyP>{'('}If anything changes, contact me at {formData.tel}{')'}</DateTinyP>
+
+
+        <DateBigP>
+          Yours sincerely, <br />
+          {formData.myName}.
+        </DateBigP>
 
 
         <CaptureIt captureAreaId="captureArea" />

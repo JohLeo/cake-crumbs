@@ -38,6 +38,13 @@ export const DateBigP = styled.p`
 export const DateP = styled.p`
   font-size: 16px;
   font-weight: 300;
-  margin: 15px 50px;
+  margin: 10px 50px;
+  color: #FF7676;
+`
+
+export const DateTinyP = styled.p`
+  font-size: 13px;
+  font-weight: 300;
+  margin: -10px 50px 20px;
   color: #FF7676;
 `

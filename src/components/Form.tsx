@@ -49,17 +49,6 @@ const FormToLove: React.FC = () => {
     });
   };
 
-  const formatPhoneNumber = (phoneNumber: string) => {
-    const digitsOnly = phoneNumber.replace(/\D/g, '');
-
-    const formattedPhoneNumber = digitsOnly.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
-
-    return formattedPhoneNumber;
-  };
-
-
-
-
   const renderDropdown = () => {
     if (formData.where === 'out') {
       return (
@@ -71,8 +60,11 @@ const FormToLove: React.FC = () => {
           required
         >
           <option value="">Select</option>
-          <option value="Dinner">Dinner</option>
-          <option value="Iceskating">Ice skating</option>
+          <option value="drinks & dinner">Drinks & dinner</option>
+          <option value="movie & Dinner">Movie & Dinner</option>
+          <option value="brunch & airhockey">Brunch & airhockey</option>
+          <option value="dart & beers">Dart & beers</option>
+          <option value="picnic & ice skating">Picnic & ice skating</option>
         </StyledSelect>
       );
     } else if (formData.where === 'away') {
@@ -85,7 +77,10 @@ const FormToLove: React.FC = () => {
           required
         >
           <option value="">Select</option>
-          <option value="Säffle">Säffle</option>
+          <option value="the outdoors">But let it include the outdoors</option>
+          <option value="tasty food">As long as the food is tasty</option>
+          <option value="dresscode">Just let me know what to wear</option>
+          <option value="surprise me">Totally up to you!</option>
         </StyledSelect>
       );
     } else if (formData.where === 'home') {
@@ -98,15 +93,16 @@ const FormToLove: React.FC = () => {
           required
         >
           <option value="">Select</option>
-          <option value="Playstation">Playstation</option>
-          <option value="Netflix and chill">Netflix and chill</option>
+          <option value="game night">Game night please</option>
+          <option value="movie & chill">Movie & chill</option>
+          <option value="wine & cook">Drink wine & cook together</option>
+          <option value="eat all the snacks & serie binge">Eat all the snacks & binge a serie</option>
         </StyledSelect>
       );
     } else {
       return null;
     }
   };
-
 
   const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = event.target.value;
@@ -115,9 +111,7 @@ const FormToLove: React.FC = () => {
       message: inputValue.slice(0, 500)
     });
   };
-
   const remainingCharacters = 500 - formData.message.length;
-
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -127,6 +121,13 @@ const FormToLove: React.FC = () => {
     }));
   };
 
+  const formatPhoneNumber = (phoneNumber: string) => {
+    const digitsOnly = phoneNumber.replace(/\D/g, '');
+
+    const formattedPhoneNumber = digitsOnly.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+
+    return formattedPhoneNumber;
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -141,13 +142,13 @@ const FormToLove: React.FC = () => {
 
   return (
     <div>
-      <FormTitle>HI</FormTitle>
-      <FormP>Would you want to do this or that</FormP>
+      <FormTitle>You said yes!</FormTitle>
+      <FormP>Do you mind answering a few questions?</FormP>
       <FormTo onSubmit={handleSubmit}>
 
         <ColContainer>
           <FormInfo>
-            Where do you like our date to be?:
+            What would be your prefered venue?
           </FormInfo>
           <RowContainer>
             <RadioLabel htmlFor="whereOut">
@@ -162,7 +163,7 @@ const FormToLove: React.FC = () => {
                 required
               />
               <FormInfo>
-                Out
+                Going out
               </FormInfo>
             </RadioLabel>
 
@@ -177,7 +178,7 @@ const FormToLove: React.FC = () => {
                 required
               />
               <FormInfo>
-                Away
+                Surprise me
               </FormInfo>
             </RadioLabel>
 
@@ -192,7 +193,7 @@ const FormToLove: React.FC = () => {
                 required
               />
               <FormInfo>
-                Home
+                At home
               </FormInfo>
             </RadioLabel>
           </RowContainer>
