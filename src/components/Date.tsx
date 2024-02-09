@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import CaptureIt from './Capture';
+import { SumContainer, SumLetter, DateHead, DateBigP, DateP } from './style/date-style';
 
 interface FormData {
   myName: string;
@@ -8,7 +9,8 @@ interface FormData {
   message: string;
   where: string;
   selectedOption: string;
-  email: string;
+  tel: number;
+  selectedTime: string;
 }
 
 const ItsADate: React.FC = () => {
@@ -20,21 +22,35 @@ const ItsADate: React.FC = () => {
   }
 
   return (
-    <div>
-      Im going to an inbox and there i will spread som joy!
+    <SumContainer>
 
-      <div id="captureArea">
-        <h2>Summary of Form Data:</h2>
-        <p>Name: {formData.myName}</p>
-        <p>To Name: {formData.toName}</p>
-        <p>Message: {formData.message}</p>
-        <p>Where: {formData.where}</p>
-        <p>Selected Option: {formData.selectedOption}</p>
-        <p>Email: {formData.email}</p>
-      </div>
-      <CaptureIt captureAreaId="captureArea" />
+      <SumLetter id="captureArea">
+        <DateHead>It's a YES!</DateHead>
 
-    </div>
+        <DateBigP>
+          My dear {formData.toName}, I would love to go on a date with you!
+        </DateBigP>
+
+        <DateP>
+          I would prefer being {formData.where} for this date. <br />
+          Im thinking a great date would be:
+          {formData.message}
+        </DateP>
+
+        <DateP>
+          Where: {formData.selectedOption} <br />
+          Pick me up on the 14th of February at {formData.selectedTime} <br /><br />
+          If anything changes, contact me, {formData.tel}
+        </DateP>
+
+        <DateBigP>Yours sincerely, {formData.myName}.</DateBigP>
+
+
+        <CaptureIt captureAreaId="captureArea" />
+      </SumLetter>
+
+
+    </SumContainer>
   )
 };
 

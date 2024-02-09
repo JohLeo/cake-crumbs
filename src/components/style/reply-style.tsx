@@ -72,7 +72,7 @@ export const NameInput = styled.input`
   margin: 0 auto;
   padding: 6px;
   background-color: #FBCAD6;
-  border-radius: 8px;
+  border-radius: 4px;
   border: none;
   color: #fff;
   font-size: 14px;
@@ -84,6 +84,17 @@ export const NameInput = styled.input`
   color: #ffffff67; 
 }
 `
+
+export const TimeInput = styled.input`
+  width: 280px;
+  padding: 3px 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #FBCAD6;
+  letter-spacing: 2px;
+`;
 
 // radio buttons
 export const RadioButton = styled.input.attrs({ type: 'radio' })`

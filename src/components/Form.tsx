@@ -11,6 +11,7 @@ import {
   RadioLabel,
   StyledSelect,
   ColContainer,
+  TimeInput,
   TextForm,
   CharSpan,
   RowContainer,
@@ -23,7 +24,8 @@ interface FormData {
   message: string;
   where: string;
   selectedOption: string;
-  email: string;
+  tel: number;
+  selectedTime: string;
 }
 
 const FormToLove: React.FC = () => {
@@ -33,7 +35,8 @@ const FormToLove: React.FC = () => {
     message: '',
     where: '',
     selectedOption: '',
-    email: '',
+    tel: 0,
+    selectedTime: ''
   });
 
   const navigate = useNavigate();
@@ -42,7 +45,7 @@ const FormToLove: React.FC = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: name === 'phone' ? parseInt(value, 10) : value
     });
   };
 
@@ -106,10 +109,19 @@ const FormToLove: React.FC = () => {
   const remainingCharacters = 500 - formData.message.length;
 
 
+  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      selectedTime: value
+    }));
+  };
+
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (formData.myName && formData.toName && formData.message && formData.where && formData.selectedOption && formData.email) {
+    if (formData.myName && formData.toName && formData.message && formData.where && formData.selectedOption && formData.tel) {
       navigate('/date', { state: { formData } });
     } else {
       alert('Please fill in all fields');
@@ -119,13 +131,13 @@ const FormToLove: React.FC = () => {
 
   return (
     <div>
-      <FormTitle>Would you like</FormTitle>
+      <FormTitle>HI</FormTitle>
       <FormP>Would you want to do this or that</FormP>
       <FormTo onSubmit={handleSubmit}>
 
         <ColContainer>
           <FormInfo>
-            Where:
+            Where do you like our date to be?:
           </FormInfo>
           <RowContainer>
             <RadioLabel htmlFor="whereOut">
@@ -189,6 +201,15 @@ const FormToLove: React.FC = () => {
         />
         <CharSpan>{remainingCharacters}</CharSpan>
 
+        <label htmlFor="timeInput">Select a time:</label>
+        <TimeInput
+          type="time"
+          id="timeInput"
+          name="timeInput"
+          value={formData.selectedTime}
+          onChange={handleTimeChange}
+          required
+        />
 
         <div>
           <FormLabel htmlFor="myName">Your name:</FormLabel>
@@ -218,15 +239,15 @@ const FormToLove: React.FC = () => {
 
 
         <div>
-          <FormLabel htmlFor="email">Email:</FormLabel>
+          <FormLabel htmlFor="tel">Phone number:</FormLabel>
           <NameInput
-            type="email"
-            id="email"
-            name="email"
-            placeholder='E-mail'
-            value={formData.email}
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder='Enter your phone number'
+            value={formData.tel}
             onChange={handleInputChange}
-            autoComplete='email'
+            autoComplete='tel'
           />
         </div>
 
