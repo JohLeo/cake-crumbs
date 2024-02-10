@@ -64,20 +64,21 @@ export const FormTo = styled.form`
 export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  margin: 12px 0 2px 0;
+  font-size: 16px;
+  margin: 10px 0 2px 0;
 `
 export const NameInput = styled.input`
   width: 280px;
-  margin: 0 auto;
-  padding: 6px;
+  margin: 0;
+  padding: 6px 8px 5.5px 8px;
   background-color: #FBCAD6;
   border-radius: 4px;
   border: none;
   color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   letter-spacing: 2px;
-  font-weight: 100;
+  font-weight: 400;
   outline: none;
 
   &::placeholder {
@@ -94,6 +95,7 @@ export const TimeInput = styled.input`
   color: #fff;
   background-color: #FBCAD6;
   letter-spacing: 2px;
+  font-family: 'Josefin Sans', sans-serif;
 `;
 
 // radio buttons
@@ -124,7 +126,7 @@ export const StyledSelect = styled.select`
   padding: 3px;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   background-color: #FBCAD6;
   letter-spacing: 2px;
@@ -139,7 +141,8 @@ export const TextForm = styled.textarea`
  border-radius: 4px;
  background-color: #FBCAD6;
  color: #fff;
- font-size: 12px;
+ font-family: 'Josefin Sans', sans-serif;
+ font-size: 13px;
  resize: none;
  outline: none;
  overflow: auto;

@@ -63,9 +63,10 @@ interface HeartProps {
 export const Heart = styled(({ pulsate, ...props }: HeartProps & React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />) <HeartProps>`
   position: absolute;
   margin: 25px;
- padding-top: 70px;
+  padding-top: 70px;
   cursor: pointer;
   animation: ${({ pulsate }) => (pulsate ? css`${startHeart} 0.8s ease` : 'none')};
+  filter: blur(0.2px);
 
   &:hover {
     animation: ${pulsHeart} 1s ease infinite;

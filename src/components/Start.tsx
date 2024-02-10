@@ -14,7 +14,7 @@ const Start: React.FC = () => {
     setFlipped(true);
     setTimeout(() => {
       navigate('/mylove');
-    }, 2000);
+    }, 4000);
   };
 
   return (

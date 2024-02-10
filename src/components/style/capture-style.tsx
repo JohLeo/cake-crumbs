@@ -17,7 +17,7 @@ export const CaptureButton = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  margin: 30px 0;align-self: center;
+  margin: 40% 0;align-self: center;
 
   &:hover {
     color: #FF7676;

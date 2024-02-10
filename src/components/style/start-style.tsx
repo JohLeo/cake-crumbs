@@ -80,6 +80,8 @@ export const To = styled.h1`
 export const Heart = styled.img`
   position: absolute;
   top: 160px;
-  margin: 25px;
+  margin: 28px;
+  filter: blur(0.3px);
+  
 `;
 

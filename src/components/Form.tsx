@@ -50,7 +50,7 @@ const FormToLove: React.FC = () => {
   };
 
   const renderDropdown = () => {
-    if (formData.where === 'out') {
+    if (formData.where === 'going out') {
       return (
         <StyledSelect
           id="dropdown"
@@ -61,7 +61,7 @@ const FormToLove: React.FC = () => {
         >
           <option value="">Select</option>
           <option value="drinks & dinner">Drinks & dinner</option>
-          <option value="movie & Dinner">Movie & Dinner</option>
+          <option value="movie & dinner">Movie & Dinner</option>
           <option value="brunch & airhockey">Brunch & airhockey</option>
           <option value="dart & beers">Dart & beers</option>
           <option value="picnic & ice skating">Picnic & ice skating</option>
@@ -79,7 +79,7 @@ const FormToLove: React.FC = () => {
           <option value="">Select</option>
           <option value="the outdoors">But let it include the outdoors</option>
           <option value="but tasty food">As long as the food is tasty</option>
-          <option value="dresscode">Just let me know what to wear</option>
+          <option value="i just need a dresscode">Just let me know what to wear</option>
           <option value="a total surprise">Totally up to you!</option>
         </StyledSelect>
       );
@@ -108,10 +108,10 @@ const FormToLove: React.FC = () => {
     const inputValue = event.target.value;
     setFormData({
       ...formData,
-      message: inputValue.slice(0, 500)
+      message: inputValue.slice(0, 300)
     });
   };
-  const remainingCharacters = 500 - formData.message.length;
+  const remainingCharacters = 300 - formData.message.length;
 
   const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -121,7 +121,7 @@ const FormToLove: React.FC = () => {
       selectedTime: value
     }));
   };
-
+  // HEY ABOVE THIS CHANGE TO FORMDATA INSTEAD OF PREVFORM!
 
 
   const formatPhoneNumber = (phoneNumber: string) => {
@@ -146,7 +146,7 @@ const FormToLove: React.FC = () => {
   return (
     <div>
       <FormTitle>You said yes!</FormTitle>
-      <FormP>Do you mind answering a few questions?</FormP>
+      <FormP>Could you answer some quick questions?</FormP>
       <FormTo onSubmit={handleSubmit}>
 
         <ColContainer>
@@ -160,8 +160,8 @@ const FormToLove: React.FC = () => {
                 type="radio"
                 id="whereOut"
                 name="where"
-                value="out"
-                checked={formData.where === 'out'}
+                value="going out"
+                checked={formData.where === 'going out'}
                 onChange={handleInputChange}
                 required
               />

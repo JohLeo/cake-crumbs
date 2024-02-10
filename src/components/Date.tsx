@@ -39,7 +39,7 @@ const ItsADate: React.FC = () => {
         </DateBigP>
 
         <DateP>
-          I would prefer being {formData.where} for this date and {formData.selectedOption} would be so much fun!
+          I would prefer to be {formData.where} for this date, {formData.selectedOption} would be so much fun!
         </DateP>
 
         <DateP>
