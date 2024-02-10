@@ -40,7 +40,9 @@ const CaptureIt: React.FC<CaptureProps> = ({ captureAreaId }) => {
 
   return (
     <CaptureDiv>
-      <CaptureButton onClick={handleDownloadConfirmation}>Capture this</CaptureButton>
+      <CaptureButton onClick={handleDownloadConfirmation}>
+        PRINT SCREEN
+      </CaptureButton>
     </CaptureDiv>
   );
 };

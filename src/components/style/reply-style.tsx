@@ -16,7 +16,7 @@ export const ColContainer = styled.div`
 export const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 10px 0px;
+  margin: 5px 0px;
 `;
 
 // basic styling for the letter
@@ -34,7 +34,7 @@ export const FormTitle = styled.h4`
   font-family: Limelight;
   font-size: 35px;
   font-weight: 300;
-  margin: 44px 0 0 50px;
+  margin: 45px 0 0 50px;
   color: #FF7676;
 `
 
@@ -42,11 +42,17 @@ export const FormTitle = styled.h4`
 export const FormP = styled.p`
   font-size: 20px;
   font-weight: 300;
-  margin: 15px 50px;
+  margin: 5px 50px;
   color: #FF7676;
 `
-
 export const FormInfo = styled.p`
+  font-size: 16px;
+  font-weight: 300;
+  color: #FF7676;
+  margin: 18px 0 0;
+`
+
+export const FormRadioP = styled.p`
   font-size: 16px;
   font-weight: 300;
   color: #FF7676;
@@ -167,7 +173,7 @@ export const FormButton = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  margin: 30px 0;
+  margin: 25px 0;
   align-self: center;
 
   &:hover {

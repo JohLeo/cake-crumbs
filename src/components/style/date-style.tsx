@@ -21,11 +21,11 @@ export const SumLetter = styled.div`
 
 
 // fontstyling 
-export const DateHead = styled.h2`
+export const DateHead = styled.h4`
   font-family: Limelight;
   font-size: 35px;
   font-weight: 300;
-  margin: 44px 0 0 50px;
+  margin: 55px 0 0 50px;
   color: #FF7676;
 `
 export const DateBigP = styled.p`

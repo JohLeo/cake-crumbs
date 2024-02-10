@@ -9,6 +9,7 @@ import {
   NameInput,
   RadioButton,
   RadioLabel,
+  FormRadioP,
   StyledSelect,
   ColContainer,
   TimeInput,
@@ -146,7 +147,6 @@ const FormToLove: React.FC = () => {
   return (
     <div>
       <FormTitle>You said yes!</FormTitle>
-      <FormP>Could you answer some quick questions?</FormP>
       <FormTo onSubmit={handleSubmit}>
 
         <ColContainer>
@@ -165,9 +165,9 @@ const FormToLove: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <FormInfo>
+              <FormRadioP>
                 Going out
-              </FormInfo>
+              </FormRadioP>
             </RadioLabel>
 
             <RadioLabel htmlFor="whereSurprised">
@@ -180,9 +180,9 @@ const FormToLove: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <FormInfo>
+              <FormRadioP>
                 Surprise me
-              </FormInfo>
+              </FormRadioP>
             </RadioLabel>
 
             <RadioLabel htmlFor="whereHome">
@@ -195,9 +195,9 @@ const FormToLove: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <FormInfo>
+              <FormRadioP>
                 At home
-              </FormInfo>
+              </FormRadioP>
             </RadioLabel>
           </RowContainer>
         </ColContainer>
