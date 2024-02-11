@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 import {
   FormTitle,
   FormTo,
-  FormP,
   FormInfo,
   FormLabel,
   NameInput,
