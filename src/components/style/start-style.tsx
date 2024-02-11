@@ -5,6 +5,7 @@ export const Envelope = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 17vh;
+  
 `;
 
 export const Card = styled.div`
@@ -22,6 +23,30 @@ export const Card = styled.div`
  
   &.flipped {
     transform: rotateY(180deg);
+  }
+
+  @media (max-width: 602px) {
+    &::after {
+      content: "Sorry, you'll need a bigger screen to use this. If you're on a phone, you could try tilting it ;)";
+      position: absolute;
+      width: 280px;
+    margin: 10vh auto;
+
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      border-style: solid;
+      border-width: 10px 10px 0;
+      border-color: white transparent transparent;
+    }
   }
 `;
 
