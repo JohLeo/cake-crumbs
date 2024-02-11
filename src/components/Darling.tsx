@@ -10,6 +10,11 @@ const Darling: React.FC = () => {
     navigate('/reply');
   };
 
+  const handleNoClick = () => {
+    alert('Well ok, have a nice day then!');
+    window.close();
+  };
+
   return (
     <LetContainer>
 
@@ -30,8 +35,7 @@ const Darling: React.FC = () => {
           </ButtOne>
 
           <ButtTwo>
-            <NoButton onClick={handleClick}> NO </NoButton>
-
+            <NoButton onClick={handleNoClick} closeWindow={true}> NO </NoButton>
           </ButtTwo>
         </Buttons>
 

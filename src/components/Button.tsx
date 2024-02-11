@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { NopeButton } from './style/darling-style';
 
@@ -6,16 +5,16 @@ import { NopeButton } from './style/darling-style';
 interface NoButtonProps {
   onClick: () => void;
   children: React.ReactNode;
+  closeWindow?: boolean;
 }
 
-const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
+const NoButton: React.FC<NoButtonProps> = ({ onClick, children, closeWindow }) => {
   useEffect(() => {
     const OFFSET = 40;
     const noButton = document.getElementById('no-button') as HTMLButtonElement | null;
 
     const setButtonPosition = (left: number, top: number) => {
       const windowBox = document.body.getBoundingClientRect();
-      const noButton = document.getElementById('no-button') as HTMLButtonElement | null;
 
       if (noButton) {
         const buttonBox = noButton.getBoundingClientRect();
@@ -63,8 +62,10 @@ const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
     };
 
     const handleClick = () => {
-      alert('Well done, have a nice day then!');
-      window.close();
+      alert('Well ok, have a nice day then!');
+      if (closeWindow) {
+        window.close();
+      }
     };
 
     if (noButton) {
@@ -72,13 +73,11 @@ const NoButton: React.FC<NoButtonProps> = ({ onClick, children }) => {
       document.addEventListener('mousemove', handleMouseMove);
 
       return () => {
-        document.removeEventListener('click', handleClick);
+        noButton.removeEventListener('click', handleClick);
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-
-    return undefined;
-  }, []);
+  }, [closeWindow]);
 
   return (
     <NopeButton id="no-button" onClick={onClick}>
