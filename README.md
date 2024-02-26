@@ -7,11 +7,11 @@ After a while I realised that if my purpose was and ask someone out, creating to
 Therefore I simplified the treasure-hunt and created tiny stupid(fun!) features on each page instead. 
 
 If I would give this project more time, I would add more of a treasure-hunt after all, and include some more css created animations to make it more dynamic. 
-
-### Sidenote
-Since I wanted it to feel somewhat oldschool, I made the descision to not make this adapted to mobile. Might fix that in the future. 
+> [!Important]
+> Since I wanted it to feel somewhat oldschool, I made the descision to not make this adapted to mobile. Might fix that in the future. 
 Also, as always, it works the best in Chrome or anything but Safari 🤓
 
-## Deployed
 
-View it live [Be my valentine](https://bemydate.netlify.app)
+## Look at it 
+
+View it live – [Be my valentine](https://bemydate.netlify.app)
