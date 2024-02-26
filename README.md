@@ -8,7 +8,7 @@ Therefore I simplified the treasure-hunt and created tiny stupid(fun!) features 
 
 If I would give this project more time, I would add more of a treasure-hunt after all, and include some more css created animations to make it more dynamic. 
 
-[!IMPORTANT]
+[IMPORTANT]
 Since I wanted it to feel somewhat oldschool, I made the descision to not make this adapted to mobile. Might fix that in the future. 
 Also, as always, it works the best in Chrome or anything but Safari 🤓
 
