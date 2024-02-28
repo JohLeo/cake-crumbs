@@ -7,9 +7,9 @@ I started setting up the basic structure and from there I continued with a page 
 After a while I realised that creating to many secrets and breadcrumbs might defeat my purpose(to ask someone out) by making it to difficult and could leave me without an actual date!
 I therefore simplified the treasure-hunt and created tiny ridiculous features on each page instead. 
 
-If I would give this project more time, I would add more of a treasure-hunt after all, and include some more css created animations to make it more dynamic. 
+If I would give this project more time, I would add more of a treasure-hunt take on it after all, and include some more css created animations to make it more dynamic. 
 > [!Important]
-> Since I wanted it to feel somewhat oldschool, I made the descision to not make this adapted to mobile. Might fix that in the future. 
+> Since I wanted it to feel somewhat oldschool, I made the descision to not make this responsive to mobile. Might fix that in the future. 
 Also, as always, it works the best in Chrome or anything but Safari 🤓
 
 
